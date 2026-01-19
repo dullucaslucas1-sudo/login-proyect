@@ -1,4 +1,8 @@
-from django.http import HttpResponse
+from django.contrib import admin
+from django.urls import path, include
 
-def login_view(request):
-    return HttpResponse("Login funcionando correctamente")
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('loginapp.urls')),
+]
+
